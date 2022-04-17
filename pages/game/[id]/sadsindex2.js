@@ -6,7 +6,17 @@ import { useAuth } from '../../../components/AuthProvider';
 import shuffle from '../../../util/shuffle';
 
 
-
+const initState = {
+    gameData: null,
+    phase: "WAITING", // WAITING, PLAYING, FINISH,
+    randomizedQuestions: null,
+    users: {},
+    currentPlayer: {
+        scores: [],
+        accScores: 0,
+        currentQuestion: 0,
+    }
+};
 const GameContext = createContext( initState );
 
 function useGame()

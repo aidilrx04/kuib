@@ -1,5 +1,5 @@
 import { firestore } from "./db-admin";
-import { User } from "./types/User";
+import { User } from "./types";
 
 
 export async function fetchUsersAdmin(uids: string[]) {
