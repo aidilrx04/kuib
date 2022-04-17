@@ -1,4 +1,5 @@
-const fireConfig = require( "../config/db/firestore.json" );
+// const fireConfig = require( "../config/db/firestore.json" );
+import fireConfig from '../config/db/firestore.json';
 
 import firebase from 'firebase/app';
 import 'firebase/auth';
