@@ -1,6 +1,6 @@
 import axios from 'axios';
 import server from '../config/server';
-import styles from '../styles/Home.module.css';
+// import styles from '../styles/Home.module.css';
 import DisplayKuibList from '../components/DisplayKuibList';
 
 
@@ -13,7 +13,7 @@ export default function Home( { kuib } )
   );
 }
 
-export async function getStaticProps()
+export async function getServerSideProps()
 {
   const kuib = await axios( `${server}/api/kuib` );
 
