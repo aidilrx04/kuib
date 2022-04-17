@@ -1,14 +1,13 @@
-import React from 'react';
-import { fireauth } from '../util/db';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import { useAuth } from '../components/AuthProvider'
-import { Button, Card, Col, Nav, Row, Tab, Tabs } from 'react-bootstrap';
-import { User } from '../util/types';
-import { v4 } from 'uuid'
+import React from 'react';
+import { Button, Card, Tab } from 'react-bootstrap';
+import { useAuth } from '../components/AuthProvider';
+import FAI from '../components/FAI';
 import StretchTabs from '../components/StretchTabs';
 import UserKuibList from '../components/UserKuibList';
-import FAI from '../components/FAI';
+import { fireauth } from '../util/db';
+import { User } from '../util/types';
 
 function Profile() {
 
