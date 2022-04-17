@@ -24,7 +24,6 @@ export default async function handler(req, res) {
 
             }
 
-
             break;
         }
         case 'POST': {
@@ -93,7 +92,7 @@ export default async function handler(req, res) {
 
         }
 
-        default: res.status(400);
+        default: res.status(400).end();
     }
 
 }
