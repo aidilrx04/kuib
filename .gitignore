@@ -30,3 +30,6 @@ yarn-error.log*
 
 # vercel
 .vercel
+
+# firestore config files
+/config/db/*
