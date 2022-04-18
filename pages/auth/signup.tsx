@@ -14,7 +14,7 @@ async function createUserInFirestore(uid, email, username) {
 
     console.log(docKey);
 
-    return firestore.collection("users")
+    return await firestore.collection("users")
         .doc(docKey)
         .set({
             id: docKey,
@@ -22,6 +22,8 @@ async function createUserInFirestore(uid, email, username) {
             email,
             username
         });
+
+
 
     //fireauth.signOut();
     //axios.delete( `${server}/api/user/${uid}` );
@@ -50,22 +52,20 @@ function SignUp({ handleNext = true }) {
 
                 createUserInFirestore(user.uid, user.email, data.username).then(() => {
                     if (handleNext) {
-                        const nex = router.query.next;
+                        const nex = router.query.next ?? '/';
 
                         router.push(nex as string)
                     }
                 })
-                    .catch(err => {
-                        setError('Failed to create user')
-                    })
             })
             .catch(error => {
                 setError(error.message)
+                setDisabled(false)
                 console.error("ERROR:", error.code, error.message);
             });
     }
 
-    if (loading) return 'Loading'
+    if (loading || disabled) return 'Loading'
 
     return (
         <Card style={{ maxWidth: 350 }} className='mx-auto my-2'>

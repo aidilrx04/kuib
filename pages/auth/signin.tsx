@@ -24,8 +24,8 @@ function SignIn({ handleNext = true }) {
             .then(cred => {
                 console.log("Login Success");
                 console.log(cred);
-                if (router.query.next && handleNext) {
-                    router.push(router.query.next as string);
+                if (handleNext) {
+                    router.push(router.query.next as string || '/');
                 }
             })
             .catch(error => {
