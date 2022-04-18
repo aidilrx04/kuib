@@ -13,10 +13,15 @@ function DisplayKuibList({ kuib: kuibList }: DisplayKuibListPropTypes) {
         <div
             className="
             kuib-list 
+            card
             container 
             d-flex flex-row flex-wrap
-            justify-content-center
-            align-items-center">
+            justify-content-start
+            align-items-start"
+            style={{
+                minHeight: '70vh'
+            }}
+        >
             {kuibList.map((kuib) => (
                 <KuibCard key={kuib.id} kuib={kuib} />
             ))}
